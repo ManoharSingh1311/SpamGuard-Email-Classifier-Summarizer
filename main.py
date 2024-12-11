@@ -63,7 +63,7 @@ if st.button("Check Spam"):
 
                 # API call to Hugging Face for summarization
                 API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-                headers = {"Authorization": "Bearer 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"}
+                headers = {"Authorization": "....................."}
 
                 data = question
                 def query(payload):
