@@ -1,53 +1,70 @@
-# **SpamGuard: Smart Email Classifier & Summarizer** 🛡️
+# **SpamGuard: Smart Email Classifier & Summarizer** 🛡️  
 
-## **Overview**
-The **SpamGuard** is a web application built with Streamlit that detects whether an email is spam or valid. Additionally, if the email is valid, it generates a summary using an advanced NLP model. This application leverages machine learning for spam classification and Hugging Face's transformer models for text summarization.
+## **Overview**  
+**SpamGuard** is a web application built with **Streamlit** that detects whether an email is spam or valid. Additionally, if the email is valid, it generates a summary using advanced NLP models from Hugging Face.  
 
-## **Table of Contents**
-- [Overview](#overview)
-- [Features](#features)
-- [How it Works](#how-it-works)
-- [Tech Stack](#tech-stack)
-- [Installation and Setup](#installation-and-setup)
-- [Usage](#usage)
-- [Model Training](#model-training)
-- [API for Summarization](#api-for-summarization)
-- [Demo](#demo)
-- [Contributing](#contributing)
-- [Contact](#contact)
-- [Disclaimer](#disclaimer)
-
-## **Features**
-- **Spam Detection**: Uses a trained Logistic Regression model to classify an email as spam or valid.
-- **Summary Generation**: If the email is valid, a summary of the email's content is generated using Hugging Face's BART transformer model.
-- **Interactive UI**: Simple and engaging interface built using Streamlit, allowing users to input the email body and get instant feedback.
-
-## **How it Works**
-1. **Spam Detection**:
-   - The model processes the email body and predicts whether it's spam or not.
-   - Spam emails will not have a summary generated.
-   - Valid (non-spam) emails will proceed to the next step of summarization.
-
-2. **Summary Generation**:
-   - For valid emails, the BART model from Hugging Face is used to generate a concise summary of the email content.
-
-## **Tech Stack**
-- **Frontend**: Streamlit (Python)
-- **Backend**: Logistic Regression (Scikit-learn) for spam classification
-- **Text Summarization**: Hugging Face's BART model (`facebook/bart-large-cnn`)
-- **Data**: Custom dataset for training the spam classifier (`mail_data.csv`)
-
-## **Installation and Setup**
-
-### 1. Install the Dependencies:
-Make sure you have Python 3.x installed, then install the required libraries:
-
-```bash
-pip install -r requirements.txt
-```
-## Contact
-For any questions or feedback, please reach out to: `burathimannu@gmail.com`
+It combines **machine learning** for spam classification and **transformer models** for text summarization, providing an end-to-end smart email assistant.  
 
 ---
 
-This `README.md` provides a comprehensive overview, installation steps, and guidance on using and further developing the project.
+## **Table of Contents**  
+- [Features](#features)  
+- [How it Works](#how-it-works)  
+- [Tech Stack](#tech-stack)  
+- [Project Structure](#project-structure)  
+- [Installation and Setup](#installation-and-setup)  
+- [Usage](#usage)  
+- [Configuring Secrets](#configuring-secrets)  
+- [Model Training](#model-training)  
+- [API for Summarization](#api-for-summarization)  
+- [Demo](#demo)  
+- [Contributing](#contributing)  
+- [Contact](#contact)  
+- [Disclaimer](#disclaimer)  
+
+---
+
+## **Features**  
+- **Spam Detection**: Logistic Regression model classifies emails as spam or valid.  
+- **Summarization**: Generates summaries of valid emails using Hugging Face’s **BART** (`facebook/bart-large-cnn`).  
+- **Interactive UI**: Streamlit frontend lets you input an email and instantly see results.  
+- **Configurable**: Secure token management with `secrets.toml`.  
+
+---
+
+## **How it Works**  
+
+1. **Spam Detection**  
+   - Input email body is passed to the trained **Logistic Regression** classifier.  
+   - If detected as **spam**, no summary is generated.  
+   - If **valid**, it proceeds to summarization.  
+
+2. **Summarization**  
+   - Hugging Face’s **BART** model generates a concise summary of the email content.  
+
+---
+
+## **Tech Stack**  
+- **Frontend**: [Streamlit](https://streamlit.io/)  
+- **Backend**: Logistic Regression (Scikit-learn)  
+- **Summarization**: Hugging Face Transformers (`facebook/bart-large-cnn`)  
+- **Dataset**: Custom dataset (`mail_data.csv`)  
+
+---
+
+## **Project Structure**  
+
+```
+SpamGuard-Email-Classifier-Summarizer/
+│── .streamlit/
+│ └── secrets.toml # Hugging Face token stored here
+│── venv/ # Virtual environment
+│── mail_data.csv # Dataset for spam classification
+│── main.py # Streamlit application entry point
+│── requirements.txt # Dependencies
+│── README.md # Documentation
+│── Spam_mail_example.txt # Sample spam email
+│── Non-spam_example.txt # Sample non-spam email
+│── Project_Overview.txt # Notes about the project
+
+```
