@@ -68,3 +68,51 @@ SpamGuard-Email-Classifier-Summarizer/
 │── Project_Overview.txt # Notes about the project
 
 ```
+
+
+---
+
+## **Installation and Setup**  
+
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/your-username/SpamGuard-Email-Classifier-Summarizer.git
+cd SpamGuard-Email-Classifier-Summarizer
+```
+
+### 2. Create Virtual Environment
+```
+   python -m venv venv
+   source venv/bin/activate   # Mac/Linux
+   venv\Scripts\activate      # Windows
+```
+
+### 3. Install Dependencies
+```
+   pip install -r requirements.txt
+```
+
+## **Configuring Secrets**
+
+This project uses Hugging Face for summarization. You need an **access token**.
+
+1. Get a token from Hugging Face: [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)  
+2. Create or edit the `.streamlit/secrets.toml` file:  
+
+```toml
+HF_TOKEN = "your_huggingface_token_here"
+```
+
+### Usage
+ Run the Streamlit app:
+ ```bash
+   streamlit run main.py
+```
+## 📬 Contact
+
+👨‍💻 Created by **Manohar Singh**  
+📧 Email: [burathimannu@gmail.com](mailto:burathimannu@gmail.com)  
+
+🔗 GitHub: [ManoharSingh1311](https://github.com/ManoharSingh1311)
+
+
